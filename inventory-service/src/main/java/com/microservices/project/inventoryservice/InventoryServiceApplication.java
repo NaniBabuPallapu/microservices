@@ -20,6 +20,7 @@ public class InventoryServiceApplication {
 	 * at the time of application this bean will be created and part of this object we are going to create below two objects with data.
 	 *
 	 */
+
 /*	@Bean
 	public CommandLineRunner loadData(InventoryRepository inventoryRepository){
 		return args -> {
