@@ -214,7 +214,7 @@ BUILDING APPLICATION :
 
 
 Services We are going to build : 
---------------------------------
+---------------------------------------------
 1. Product Service : Create and View Products, acts as Product Catalog.
 
 2. Order Service : Can order products.
@@ -227,3 +227,60 @@ Services We are going to build :
 
 6. Synchronous and Asynchronous communication.
 
+
+
+
+1.After creating product-service, order-service and inventory-service, We use WebClient to make Synchronous request from Order-Service to the Inventory-Service, then Inventory-Service will respond with required data and WebClient will take that required data and give it to Order-Service.
+
+2. Discovery-Service is nothing but a server which will store all the information about services(Inventory-Service)) like service-name, IP address.
+
+3. When we are using the Discovery-Service , Our microservices will register in the Discovery-Service by making the request at the starting of the application.
+
+4. Whenever services(Inventory-Service) are making request , Discovery-Service will add the entries of the services into it's local copy. we call it registry, that's why we call it Service Registry.
+
+5. Once all the information about the services(Inventory-Service) is present in Discovery-Service, When our Order-Service wants to call the Inventory-Service, First Order-Service will call Discovery-Service by asking where I can find the Inventory-Service. Then Discovery-Service will respond with particular IP address to call Inventory-Service. Then Order-Service will call to Inventory-Service.
+
+6. In this way, we can avoid the hardcoding URL of the Inventory-Service by making use of Discovery-Service.
+
+7. When we are making initial call to the Discovery-Service, Discovery-Service will sends its registry as the the respnose to the client , the client will store the local copy of the registry in a separate location.
+
+8. In Some reasons, If the Discovery-Service is not available, first Discovery-Service will check the local copy because it already has information about Inventory-Service. It will call Inventory-Service IP address, If the first instance of the Inventory-Service is not available, it will check the next entry of Inventory-Service likewise it goes through all entries of its registry. If all the instances are down, Discovery-Service will fail by saying that Inventory-Service is not available.
+
+
+
+
+
+4. API-Gateway
+================
+
+An API Gateway in a Spring Boot microservices architecture is a server that acts as a single entry point for clients to interact with various microservices. 
+It provides a unified interface for clients to access multiple microservices and offers various features such as routing, load balancing, security, and more. 
+
+Here's a more detailed explanation with an example:
+
+Imagine you have several microservices in your Spring Boot application, each responsible for a specific function, such as user management, product catalog, and order processing. Without an API Gateway, clients (like web or mobile applications) would need to interact with each microservice individually, knowing their specific endpoints and how to handle different security mechanisms.
+
+With an API Gateway:
+
+1. **Single Entry Point**: Clients interact with the API Gateway using a single entry point (e.g., `https://api.myapp.com`). They don't need to know the details of each microservice.
+
+2. **Routing**: The API Gateway routes incoming requests to the appropriate microservice based on the URL or other criteria. For example, a request to `/users` would be routed to the User service, while a request to `/products` would go to the Product service.
+
+3. **Load Balancing**: If you have multiple instances of a microservice running for high availability, the API Gateway can distribute requests among these instances.
+
+4. **Authentication and Authorization**: The API Gateway can handle user authentication and enforce access control policies. It ensures that only authenticated and authorized users can access specific microservices.
+
+5. **Aggregation**: The API Gateway can aggregate data from multiple microservices into a single response. For example, when retrieving information about an order, the API Gateway might need to fetch data from the User, Product, and Order services and provide a single, unified response to the client.
+
+
+Here's a simplified example using Spring Cloud Gateway (a popular API Gateway in Spring Boot):
+
+1. **Client Request**: A client sends a request to `https://api.myapp.com/orders`.
+
+2. **API Gateway**: The API Gateway (implemented using Spring Cloud Gateway) receives the request and determines that it should be routed to the Order service.
+
+3. **Order Service**: The Order service processes the request and returns the order information.
+
+4. **API Gateway Response**: The API Gateway receives the response from the Order service, performs any necessary transformations, and sends the unified response back to the client.
+
+By using an API Gateway, you can simplify client interactions, improve security, and enhance the overall manageability of your microservices architecture in Spring Boot. It serves as a critical component for building scalable and efficient microservices-based applications.
