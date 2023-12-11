@@ -1,8 +1,8 @@
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\repository\ProductRepository.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\dto\ProductDto.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\controller\ProductController.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\mappings\ProductMapping.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\ProductServiceApplication.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\model\Product.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\mappings\ProductMappingImpl.java
-D:\SELF-LEARNING\microservices\product-service\src\main\java\com\microservices\project\productservice\service\ProductService.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\repository\ProductRepository.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\dto\ProductDto.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\controller\ProductController.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\mappings\ProductMappingImpl.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\ProductServiceApplication.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\service\ProductService.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\model\Product.java
+C:\Personal Projects\microservices\product-service\src\main\java\com\microservices\project\productservice\mappings\ProductMapping.java
