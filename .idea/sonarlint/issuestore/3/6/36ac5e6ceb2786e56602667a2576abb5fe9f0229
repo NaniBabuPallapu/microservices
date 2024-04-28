@@ -1,0 +1,10 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(ÃòØéøÿÿÿÿ
+r
+java:S1128"WRemove this unused import 'com.microservices.project.inventoryservice.model.Inventory'.(ş¡áöúÿÿÿÿ
+{
+java:S1128"fRemove this unused import 'com.microservices.project.inventoryservice.repository.InventoryRepository'.(ÀĞöU
+]
+java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ
+^
+java:S1128	"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş
