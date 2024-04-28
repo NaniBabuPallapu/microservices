@@ -19,7 +19,7 @@ public class ProductController {
     /**
      * This method is used to get All Products and @return response with fetchedProductDtoList and status message.
      */
-    @GetMapping("")
+    @GetMapping("/allProducts")
     public ResponseEntity<List<ProductDto>> getAllProduct(){
         List<ProductDto> productDtoList = productService.getProducts();
         return new ResponseEntity<>(productDtoList, HttpStatus.OK);

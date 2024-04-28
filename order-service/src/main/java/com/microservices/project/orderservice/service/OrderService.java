@@ -10,9 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,11 +31,14 @@ public class OrderService {
     public static final String ORDER_NUMBER_START = "H123";
 
 
-
     @Autowired
     public OrderRepository orderRepository;
 
+    @Autowired
     private final WebClient.Builder webClientBuilder;
+
+    @Autowired
+    private final RestTemplate restTemplate;
 
     /**
      * getting the orderDto object and convert the orderDto object into Order object and save it.
@@ -71,6 +77,19 @@ public class OrderService {
                 .retrieve()
                 .bodyToMono(InventoryDto[].class) // This is from inventory-service response class(areItemsInStock() it returns InventoryDto Array as response)
                 .block(); // to make synchronous request.
+/*
+        // To achieve the same functionality using "RestTemplate"  follow below example
+        // Build the URL with query parameters
+        String url = "http://inventory-service/api/inventory/items-list-stock";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("itemName", listOfItemNames);
+
+        // Make the GET request and retrieve the response
+        ResponseEntity<InventoryDto[]> response = restTemplate.getForEntity(builder.toUriString(), InventoryDto[].class);
+
+        // Extract the response body
+        InventoryDto[] inventoryDtoArray = response.getBody();
+*/
 
         boolean allItemsAreInStock = Arrays.stream(inventoryDtoArray).allMatch(InventoryDto::isItemInStock); // it will create a stream, so that we can easily call the allMatch method and store the response as boolean in local variable as allItemsAreInStock.
         if (allItemsAreInStock) {
