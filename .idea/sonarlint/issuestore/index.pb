@@ -33,3 +33,17 @@ eproduct-service/src/main/java/com/microservices/project/productservice/ProductS
 hproduct-service/src/main/java/com/microservices/project/productservice/controller/ProductController.java,2\4\24c21e382f0c05bb60a56d4db13dde72cedacc01
 è
 _order-service/src/main/java/com/microservices/project/orderservice/OrderServiceApplication.java,9\e\9ebd8b80d4c9e7663cf861a5581d4ba53f3932ed
+~
+Napi-gateway/src/main/java/com/microservices/project/ApiGatewayApplication.java,a\f\aff67a46e81ae4417cb5d4738a0f4180f84b9c0e
+û
+ninventory-service/src/main/java/com/microservices/project/inventoryservice/controller/InventoryController.java,9\9\99d332e4bbbaa8e748e22b6416bd7648d92ef0c8
+û
+ninventory-service/src/main/java/com/microservices/project/inventoryservice/repository/InventoryRepository.java,2\2\227bbed0d7dfe67f3d96ff4feee2d8db5f55a684
+õ
+kinventory-service/src/main/java/com/microservices/project/inventoryservice/InventoryServiceApplication.java,3\6\36ac5e6ceb2786e56602667a2576abb5fe9f0229
+å
+\order-service/src/main/java/com/microservices/project/orderservice/service/OrderService.java,0\4\044c828fbcc3717dc86e0fc41c0d7a63247be261
+í
+border-service/src/main/java/com/microservices/project/orderservice/controller/OrderController.java,e\f\ef9ba613b759491cb03aa5eaa72e483581bb0c42
+C
+api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73

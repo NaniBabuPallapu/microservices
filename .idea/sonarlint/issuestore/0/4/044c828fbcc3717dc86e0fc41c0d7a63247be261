@@ -1,0 +1,8 @@
+
+4
+java:S21191"Save and re-use this "Random".(‹µÎµ
+]	java:S125Q"<This block of commented-out lines of code should be removed.(ŒÙ¬Ÿúÿÿÿÿ8­ÕæÜî1
+f
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8ÀÕæÜî1
+k
+java:S1128"NRemove this unused import 'org.springframework.web.util.UriComponentsBuilder'.(ßª»Ó8ÀÕæÜî1
