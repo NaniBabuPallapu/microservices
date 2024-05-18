@@ -95,10 +95,14 @@ public class OrderService {
         if (allItemsAreInStock) {
             orderRepository.save(order);
             log.info("order has been saved successfully order {}:", order);
+            // Update the inventory
+//            updateInventory(order);
         } else {
             throw new IllegalArgumentException("product is not in stock. please try again once product is available.");
         }
     }
+
+
 
     /**
      * This method is used to convert Dto into Entity.
@@ -114,4 +118,22 @@ public class OrderService {
         orderLineItems.setQuantity(orderLineItemsDto.getQuantity());
         return orderLineItems;
     }
+
+/*
+    private void updateInventory(Order order) {
+        // Create a list of inventory updates from the order items
+        List<InventoryDto> updateRequests = order.getItems().stream()
+                .map(item -> new InventoryDto(item.getItemName(), item.getQuantity()))
+                .collect(Collectors.toList());
+
+        // Make the POST request to update the inventory
+        webClientBuilder.build().post()
+                .uri(inventoryServiceBaseUrl + "/api/inventory/update-stock")
+                .bodyValue(updateRequests)
+                .retrieve()
+                .bodyToMono(Void.class)
+                .block(); // synchronous request
+
+        log.info("Inventory has been updated successfully for order: {}", order);
+    }*/
 }
